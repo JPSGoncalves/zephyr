@@ -28,6 +28,7 @@ source "drivers/mbox/Kconfig.nrfx"
 source "drivers/mbox/Kconfig.nxp_imx"
 source "drivers/mbox/Kconfig.nxp_mailbox"
 source "drivers/mbox/Kconfig.nxp_s32"
+source "drivers/mbox/Kconfig.sophgo"
 source "drivers/mbox/Kconfig.renesas_ra"
 source "drivers/mbox/Kconfig.renesas_rcar"
 source "drivers/mbox/Kconfig.renesas_rz"
@@ -37,6 +38,7 @@ source "drivers/mbox/Kconfig.ti_omap"
 source "drivers/mbox/Kconfig.ti_secproxy"
 source "drivers/mbox/Kconfig.xlnx"
 # zephyr-keep-sorted-stop
+
 
 config MBOX_INIT_PRIORITY
 	int "MBOX init priority"
