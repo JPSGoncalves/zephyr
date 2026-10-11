@@ -5,4 +5,4 @@ description: T-Head C906 RISC-V CPU
 
 compatible: "thead,c906"
 
-include: riscv,cpus.yaml
+include: riscv-common.yaml
