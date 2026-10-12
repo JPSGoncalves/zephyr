@@ -3,10 +3,6 @@
 
 if SOC_SERIES_CV181X
 
-config NUM_IRQS
-	int
-	default 128
-
 config RISCV_SOC_INTERRUPT_INIT
 	default y
 
@@ -15,5 +11,14 @@ config RISCV_HAS_PLIC
 
 config 2ND_LVL_INTR_00_OFFSET
 	default 11
+
+config 2ND_LVL_ISR_TBL_OFFSET
+	default 12
+
+config MAX_IRQ_PER_AGGREGATOR
+	default 62
+
+config NUM_IRQS
+	default 74
 
 endif # SOC_SERIES_CV181X
