@@ -6,10 +6,8 @@ toolchain:
   - zephyr
 ram: 2048
 supported:
-  - clock
   - gpio
   - interrupt-controller
   - mailbox
   - pinctrl
-  - pwm
   - serial
