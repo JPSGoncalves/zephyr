@@ -10,4 +10,16 @@
 				 <CVI_PINMUX(JTAG_CPU_TCK, UART1_RX)>;  /* A18 */
 		};
 	};
+
+	gpioa_default: gpioa_default {
+		group1 {
+			pinmux = <CVI_PINMUX(IIC0_SDA, XGPIOA_29)>;     /* A29, LED */
+		};
+	};
+
+	gpiob_default: gpiob_default {
+		group1 {
+			pinmux = <CVI_PINMUX(USB_ID, XGPIOB_4)>;        /* B4, RECOVERY key */
+		};
+	};
 };

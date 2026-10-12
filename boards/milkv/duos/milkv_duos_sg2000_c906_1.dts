@@ -61,10 +61,14 @@
 };
 
 &gpioa {
+	pinctrl-0 = <&gpioa_default>;
+	pinctrl-names = "default";
 	status = "okay";
 };
 
 &gpiob {
+	pinctrl-0 = <&gpiob_default>;
+	pinctrl-names = "default";
 	status = "okay";
 };
 
