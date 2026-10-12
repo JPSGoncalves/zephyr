@@ -12,6 +12,7 @@
 		#size-cells = <0>;
 
 		timebase-frequency = <DT_FREQ_M(25)>;
+
 		cpu0: cpu@0 {
 			compatible = "thead,c906", "riscv";
 			reg = <0>;
@@ -20,7 +21,6 @@
 			riscv,isa-base = "rv64i";
 			riscv,isa-extensions = "i", "m", "a", "f", "d", "c", "zicsr", "zifencei";
 			riscv,privilege-modes = "m", "s";
-
 
 			hlic: interrupt-controller {
 				compatible = "riscv,cpu-intc";
@@ -47,7 +47,7 @@
 			#interrupt-cells = <2>;
 		};
 
-		systick: timer@74000000 {
+		systick: timer@74004000 {
 			compatible = "riscv,machine-timer";
 			reg = <0x74004000 0x8>;
 			reg-names = "mtimecmp";
