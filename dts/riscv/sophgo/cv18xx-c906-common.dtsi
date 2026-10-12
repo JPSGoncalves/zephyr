@@ -12,11 +12,14 @@
 		#size-cells = <0>;
 
 		cpu0: cpu@0 {
-			compatible = "thead,c906";
+			compatible = "thead,c906", "riscv";
 			reg = <0>;
 			clock-frequency = <DT_FREQ_M(700)>;
 			mmu-type = "riscv,none";
-			riscv,isa = "rv64imafdc_zicsr_zifencei";
+			riscv,isa-base = "rv64i";
+			riscv,isa-extensions = "i", "m", "a", "f", "d", "c", "zicsr", "zifencei";
+			riscv,privilege-modes = "m", "s";
+
 
 			hlic: interrupt-controller {
 				compatible = "riscv,cpu-intc";
