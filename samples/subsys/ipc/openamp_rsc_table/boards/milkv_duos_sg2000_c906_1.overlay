@@ -1,0 +1,30 @@
+/*
+ * SPDX-FileCopyrightText: Copyright The Zephyr Project Contributors
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+/ {
+	chosen {
+		zephyr,ipc = &ipc_mbox;
+		zephyr,ipc_shm = &shm;
+	};
+
+	soc {
+		/* Linux c906l_dma shared-dma-pool: vrings and rpmsg buffers */
+		shm: memory@9fd00000 {
+			compatible = "mmio-sram";
+			reg = <0x9fd00000 DT_SIZE_M(1)>;
+		};
+	};
+
+	ipc_mbox: ipc-mbox {
+		compatible = "zephyr,mbox-ipm";
+		/* Linux rx is channel 1, Linux tx is channel 0 */
+		mboxes = <&mbox 1>, <&mbox 0>;
+		mbox-names = "tx", "rx";
+	};
+};
+
+&mbox {
+	status = "okay";
+};
