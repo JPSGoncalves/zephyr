@@ -42,7 +42,7 @@
 			interrupts-extended = <&hlic 11>;
 			interrupt-controller;
 			riscv,max-priority = <7>;
-			riscv,ndev = <61>;
+			riscv,ndev = <62>;
 			#address-cells = <0>;
 			#interrupt-cells = <2>;
 		};
