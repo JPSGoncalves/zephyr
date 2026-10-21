@@ -7,10 +7,17 @@
 	chosen {
 		zephyr,ipc = &ipc_mbox;
 		zephyr,ipc_shm = &shm;
+		zephyr,ipc_rsc_table = &rsc_table;
 		zephyr,ram-console = &ram_console;
 	};
 
 	soc {
+		/* Linux c906l_rsc reserved-memory: resource table copy */
+		rsc_table: memory@9fcff000 {
+			compatible = "mmio-sram";
+			reg = <0x9fcff000 DT_SIZE_K(4)>;
+		};
+
 		/* Linux c906l_dma shared-dma-pool: vrings and rpmsg buffers */
 		shm: memory@9fd00000 {
 			compatible = "mmio-sram";
