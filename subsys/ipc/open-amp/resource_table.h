@@ -84,11 +84,17 @@ struct fw_resource_table {
 	#define VDEV_ENTRY
 #endif
 
+#if defined(CONFIG_RAM_CONSOLE_BUFFER_SECTION)
+	#define RAM_CONSOLE_DA DT_REG_ADDR(DT_CHOSEN(zephyr_ram_console))
+#else
+	#define RAM_CONSOLE_DA ((uint32_t)ram_console_buf)
+#endif
+
 #if defined(CONFIG_RAM_CONSOLE)
 	#define CM_TRACE_ENTRY							\
 		.cm_trace = {							\
 			RSC_TRACE,						\
-			(uint32_t)ram_console_buf, CONFIG_RAM_CONSOLE_BUFFER_SIZE, 0,\
+			RAM_CONSOLE_DA, CONFIG_RAM_CONSOLE_BUFFER_SIZE, 0,\
 			"Zephyr_log",						\
 		},
 #else
